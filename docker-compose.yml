@@ -1,0 +1,19 @@
+services: 
+  api: 
+    build: ./backend/
+    working_dir: /app
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./backend:/app
+    environment: ##mostly useful for the debug mode
+      - FLASK_APP=API.py
+      - FLASk_DEBUG=1 ##restart flask on file change
+
+  client:
+    build: ./frontend/
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
