@@ -1,8 +1,6 @@
-
-
-function Gold_Display(){
+function PageSelector(){
     let value: number = 69421;
     return <p>{value}</p>;
 }
 
-export default Gold_Display;
+export default PageSelector;
