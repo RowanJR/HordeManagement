@@ -1,0 +1,13 @@
+.List{  
+    background-color:rgb(230, 230, 230);
+    border-radius: 8px;
+
+    height: 85%;
+    width: 35%;
+    overflow-y: scroll;
+
+    position: fixed;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+}

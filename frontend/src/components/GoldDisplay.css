@@ -1,0 +1,15 @@
+.GoldDisplayBox{
+    background-color:rgb(187, 187, 187);
+
+    border-radius: 8px;
+    padding: 16px 32px;
+
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.GoldDisplayText{
+    color:rgb(0, 0, 0);
+}

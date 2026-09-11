@@ -1,6 +1,13 @@
+import './PageSelector.css'
+
 function PageSelector(){
-    let value: number = 69421;
-    return <p>{value}</p>;
+        
+    return(
+        <div className="PageBox">
+            <button className="AssetsSelect">Assets</button>
+            <button className="EventsSelect">Events</button>
+        </div>
+    );
 }
 
 export default PageSelector;

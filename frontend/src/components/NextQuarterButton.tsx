@@ -1,6 +1,11 @@
+import './NextQuarterButton.css'
+
 function NextQuarterButton(){
-    let value: number = 69421;
-    return <p>{value}</p>;
+    return (
+        <div>
+            <button className="NextButton">Advance to <br></br> Next Quarter</button>
+        </div>
+    );
 }
 
 export default NextQuarterButton;

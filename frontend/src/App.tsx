@@ -1,10 +1,25 @@
 import './App.css'
 import GoldDisplay from './components/GoldDisplay';
+import NextQuarterButton from './components/NextQuarterButton';
+import PageSelector from './components/PageSelector';
+import AssetList from './components/AssetList';
+import EventList from './components/EventList';
+import EventCard from './components/EventCard';
 
 function App() {
 
   return (
-    <h1><GoldDisplay></GoldDisplay></h1>
+    <div>
+      {/*<div className="Assets">
+        <AssetList />
+      </div>*/}
+      <div className="Events">
+        <EventCard/>
+      </div>
+      <GoldDisplay />
+      <PageSelector />
+      <NextQuarterButton />
+    </div>
   )
 }
 
