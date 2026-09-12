@@ -2,7 +2,7 @@
     background-color:rgb(187, 187, 187);
 
     border-radius: 8px;
-    padding: 16px 20%;
+    padding: 16px 30%;
 
     position: fixed;
     top: 1%;
@@ -13,19 +13,38 @@
 }
 
 .AssetsSelect{
-    background-color:rgb(187, 187, 187);
+    background: none;
+    border: none;
+    outline: none;
+
+    padding: 5px 20%;
+
     position: fixed;
     top: 50%;
-    left: 25%;
-    transform: translateX(-50%);
+    left: 1%;
     transform: translateY(-50%);
 }
 
 .EventsSelect{
-    background-color:rgb(187, 187, 187);
+    background: none;
+    border: none;
+    outline: none;
+
+    padding: 5px 20%;
+
     position: fixed;
     top: 50%;
-    right: 25%;
+    right: 1%;
     transform: translateX(-50%);
     transform: translateY(-50%);
+}
+
+.AssetsSelect[data-state="active"]{
+    background-color:rgb(230, 230, 230);
+    border-radius: 8px;
+}
+
+.EventsSelect[data-state="active"]{
+    background-color:rgb(230, 230, 230);
+    border-radius: 8px;
 }

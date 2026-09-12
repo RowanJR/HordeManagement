@@ -1,0 +1,17 @@
+.EventName{
+    font: bold 24px sans-serif;
+}
+
+.EventDescription{
+    font: sans-serif;
+}
+
+.NegativeModifier{
+    color: red;
+    font: 12px sans-serif;
+}
+
+.PositiveModifier{
+    color: green;
+    font: 12px sans-serif;
+}

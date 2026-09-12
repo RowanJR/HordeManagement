@@ -1,11 +1,18 @@
 import './PageSelector.css'
 
-function PageSelector(){
+type Page = "EventPage" | "AssetPage";
+
+interface PageSelectorProp{
+    activepage: Page;
+    OnSelectPage: (page: Page) => void;
+}
+
+function PageSelector({ activepage, OnSelectPage }: PageSelectorProp){
         
     return(
         <div className="PageBox">
-            <button className="AssetsSelect">Assets</button>
-            <button className="EventsSelect">Events</button>
+            <button className="AssetsSelect" data-state={activepage === "AssetPage" ? "active" : 'inactive'} onClick={() => OnSelectPage("AssetPage")} >Assets</button>
+            <button className="EventsSelect" data-state={activepage === "EventPage" ? "active" : 'inactive'} onClick={() => OnSelectPage("EventPage")} >Events</button>
         </div>
     );
 }

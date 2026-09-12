@@ -1,31 +1,32 @@
 import './EventCard.css'
 
-interface Modifier {
-    stockmodified: string;
-    modification: number;
+interface Event {
+    eventname: string;
+    description; string;
+    modifierarray: [string, number][];
 }
 
-function EventCard(props){
-    
-    let modifiers: Modifier[] = [];
-
-    let newmod: Modifier = {
-        stockmodified: "Farmers' Union",
-        modification: -0.20
-    };
-
-    modifiers.push(newmod)
+function EventCard({ eventname, description, modifierarray }: Event){
     
     return(
         <div className="Event">
-            <span className="EventName">{/*props.eventname*/}testname</span>
+            <span className="EventName">{eventname}</span>
             <br/>
-            <span className="EventDescription">{/*props.eventdescription*/}testdesc</span>
+            <span className="EventDescription">{description}</span>
             <br/>
             <span className="EventModifiers">
-                {modifiers.map(modifier => <li className="ModifierIndex">
-                {modifier.stockmodified}: {modifier.modification}
-            </li>)}
+                {modifierarray.map(([label, value]) => 
+                <>
+                    {value <= 0 ?
+                        <li className="NegativeModifier">
+                            {label}: {value*100}%
+                        </li>
+                    :
+                        <li className="PositiveModifier">
+                            {label}: +{value*100}%
+                        </li>
+                    }
+                </>)}
             </span>
         </div>
     );

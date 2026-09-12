@@ -4,23 +4,22 @@ import NextQuarterButton from './components/NextQuarterButton';
 import PageSelector from './components/PageSelector';
 import AssetList from './components/AssetList';
 import EventList from './components/EventList';
-import EventCard from './components/EventCard';
+import { useState } from "react";
+
+type Page = "EventPage" | "AssetPage";
 
 function App() {
+  const [activepage, SetActivePage] = useState<Page>("AssetPage");
 
   return (
     <div>
-      {/*<div className="Assets">
-        <AssetList />
-      </div>*/}
-      <div className="Events">
-        <EventCard/>
-      </div>
+      {activepage === "EventPage" && <EventList />}
+      {activepage === "AssetPage" && <AssetList />}
       <GoldDisplay />
-      <PageSelector />
+      <PageSelector activepage={activepage} OnSelectPage={SetActivePage} />
       <NextQuarterButton />
     </div>
-  )
+  );
 }
 
 export default App;
