@@ -1,7 +1,9 @@
 import './AssetList.css'
 import StockAsset from './StockAsset';
+import {useEffect, useState} from 'react';
 
 type AssetInfo = {
+    id: string;
     stockname: string; 
     description: string; 
     owned: number; 
@@ -12,65 +14,38 @@ type AssetInfo = {
 
 function AssetList(){
 
-    let AssetCategories: AssetInfo[] = [];
+    const [stocks, setStocks] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-    let farmers: AssetInfo = {
-        stockname: "Farmers Union",
-        description: "Staple goods", 
-        owned: 0,
-        price: 10,
-        dividend: 0.04,
-        deviation: 0.05
-    };
-    let miners: AssetInfo = {
-        stockname: "miners",
-        description: "Staple goods", 
-        owned: 0,
-        price: 10,
-        dividend: 0.04,
-        deviation: 0.05
-    };
-    let crown: AssetInfo = {
-        stockname: "crown",
-        description: "Staple goods", 
-        owned: 0,
-        price: 10,
-        dividend: 0.04,
-        deviation: 0.05
-    };
-    let militia: AssetInfo = {
-        stockname: "militia",
-        description: "Staple goods", 
-        owned: 0,
-        price: 10,
-        dividend: 0.04,
-        deviation: 0.05
-    };
-    let tinkerers: AssetInfo = {
-        stockname: "tinkerers",
-        description: "Staple goods", 
-        owned: 0,
-        price: 10,
-        dividend: 0.04,
-        deviation: 0.05
-    };
+    useEffect(() =>
+        {
+            fetch('http://localhost:5001/api/portfolio')
+                .then((res) => {
+                    return res.json();
+                })
+                .then((data) => {
+                    setStocks(data);
+                    setLoading(false);
+                })
+                .catch((err) => console.error("error fecthing data: ", err));
+        }, 
+    []);
 
-    AssetCategories.push(farmers);
-    AssetCategories.push(miners);
-    AssetCategories.push(crown);
-    AssetCategories.push(militia);
-    AssetCategories.push(tinkerers);
-        
+    if(loading) return <div className="List">Obtaining information from server...</div>
+
+    if(stocks.length <= 0) return <div className="List">No stocks found</div>
+    
     return(
         <div className="List">
-            {AssetCategories.map(asset => <li className="AssetIndex">
+            {stocks.map(stock => <li className="AssetIndex">
                 <StockAsset
-                    stockname= {asset["stockname"]}
-                    description= {asset["description"]}
-                    owned= {asset["owned"]}
-                    price= {asset["price"]}
-                    dividend= {asset["dividend"]}
-                    deviation= {asset["deviation"]}
+                    stockid= {stock["id"]}
+                    stockname= {stock["stockname"]}
+                    description= {stock["description"]}
+                    owned= {stock["owned"]}
+                    price= {stock["price"]}
+                    dividend= {stock["dividend"]}
+                    deviation= {stock["deviation"]}
                 />
                 <hr/>
             </li>)}

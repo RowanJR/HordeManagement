@@ -17,3 +17,8 @@ services:
     volumes:
       - ./frontend:/app
       - /app/node_modules
+
+  db:
+    image: mongo:6
+    ports: 
+    - "27017:27017"

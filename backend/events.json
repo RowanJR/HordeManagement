@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Famine",
+        "description": "A famine has hit, greatly hurting most industries, especially the Farmer's Union, and leaving them weak to raiders.",
+        "modifiers": [
+            {"name": "Raiders", "id": "RAID", "value": 0.2},
+            {"name": "Farmer's Union", "id": "FARM", "value": -0.2}
+        ]
+    },
+    {
+        "name": "Ore Vein Discovered",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "Miners", "id": "MINE", "value": 0.3},
+            {"name": "Tinkerers", "id": "TINK", "value": 0.1}
+        ]
+    }
+]

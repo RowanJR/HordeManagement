@@ -1,0 +1,60 @@
+[
+    {
+        "id":"CRWN",
+        "name":"Crown Bonds",
+        "description":"Crown debt, pays steady but small dividends. Resistant against even large events.",
+        "price" : 10,
+        "dividend": 0.01,
+        "deviation": 0.001
+    },
+    {
+        "id":"FARM",
+        "name":"Farmers' Union",
+        "description":"The Farmers' Union manages the production of staple crops. They have steady and relatively consistent growth.",
+        "price" : 10,
+        "dividend": 0.04,
+        "deviation": 0.05
+    },
+    
+    {
+        "id":"MILI",
+        "name":"Militia",
+        "description":"Lorem ipsum.",
+        "price" : 10,
+        "dividend": 0.00,
+        "deviation": 0.000
+    },
+    {
+        "id":"MINE",
+        "name":"Miners",
+        "description":"Lorem ipsum.",
+        "price" : 10,
+        "dividend": 0.00,
+        "deviation": 0.000
+    },
+    {
+        "id":"TINK",
+        "name":"Tinkerers",
+        "description":"Lorem ipsum.",
+        "price" : 10,
+        "dividend": 0.00,
+        "deviation": 0.000
+    },
+    {
+        "id":"RAID",
+        "name":"Raiders",
+        "description":"Lorem ipsum.",
+        "price" : 10,
+        "dividend": 0.00,
+        "deviation": 0.000
+    },
+    {
+        "id":"MERC",
+        "name":"Merchants",
+        "description":"Lorem ipsum.",
+        "price" : 10,
+        "dividend": 0.00,
+        "deviation": 0.000
+    }
+]
+

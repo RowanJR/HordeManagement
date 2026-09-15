@@ -1,7 +1,21 @@
 import './GoldDisplay.css'
+import {useEffect, useState} from 'react';
 
 function GoldDisplay(){
-    let value: number = 69421;
+    const [value, setValue] = useState(null);
+
+    useEffect(() =>
+        {
+            fetch('http://localhost:5001/api/gold')
+                .then((res) => {
+                    return res.json();
+                })
+                .then((data) => {
+                    setValue(data["amount"]);
+                })
+                .catch((err) => console.error("error fecthing data: ", err));
+        }, 
+    []);
 
     return (
     <div className="GoldDisplayBox">
