@@ -15,6 +15,7 @@ def Initialize(db):
     db.events.drop()
     db.events.insert_many(events)
 
+    #right now there is only one player due to how time progression works in the game and because there is one data base for all stocks
     db.players.drop()
     db.players.insert_one({
         "gold": 500,

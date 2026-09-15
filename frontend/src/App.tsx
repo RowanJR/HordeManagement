@@ -10,12 +10,17 @@ type Page = "EventPage" | "AssetPage";
 
 function App() {
   const [activepage, SetActivePage] = useState<Page>("AssetPage");
+  const [refreshtrigger, setRefresh] = useState(0);
+
+  const GoldRefresh = () => {
+    setRefresh(refreshtrigger + 1);
+  };
 
   return (
     <div>
       {activepage === "EventPage" && <EventList />}
-      {activepage === "AssetPage" && <AssetList />}
-      <GoldDisplay />
+      {activepage === "AssetPage" && <AssetList onTransaction={GoldRefresh}/>}
+      <GoldDisplay refreshTrigger={refreshtrigger}/>
       <PageSelector activepage={activepage} OnSelectPage={SetActivePage} />
       <NextQuarterButton />
     </div>

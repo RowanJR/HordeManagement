@@ -2,7 +2,7 @@ import './AssetList.css'
 import StockAsset from './StockAsset';
 import {useEffect, useState} from 'react';
 
-type AssetInfo = {
+/*type AssetInfo = {
     id: string;
     stockname: string; 
     description: string; 
@@ -10,10 +10,9 @@ type AssetInfo = {
     price: number; 
     dividend: number; 
     deviation: number;
-};
+};*/
 
-function AssetList(){
-
+function AssetList(props){
     const [stocks, setStocks] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -46,6 +45,7 @@ function AssetList(){
                     price= {stock["price"]}
                     dividend= {stock["dividend"]}
                     deviation= {stock["deviation"]}
+                    goldupdate= {props.onTransaction}
                 />
                 <hr/>
             </li>)}

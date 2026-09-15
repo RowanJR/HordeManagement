@@ -71,7 +71,7 @@ def buy():
 
     #case 1: not enough gold to buy
     if(goldamt < stockcost):
-        return jsonify({"message" : "insufficient funds for purchase"}), 200
+        return jsonify({"message" : "insufficient funds for purchase" , "success" : False}), 200
      
     #case 2: have enough gold to buy
     newvalues = {"$set" : {"gold" : goldamt - stockcost}}
@@ -97,7 +97,7 @@ def buy():
     else:
         result = playerstates.update_one({"portfolio.id": stockid}, {"$set" : {"portfolio.$.owned" : alreadyowned + 1}})
  
-    return jsonify({"message" : "bought"}), 200
+    return jsonify({"message" : "bought","success" : True}), 200
 
 @app.route("/api/sell", methods=['PUT', 'POST'])
 def sell():
@@ -119,7 +119,7 @@ def sell():
 
     #case 1: not enough stock to sell
     if(alreadyowned <= 0):
-        return jsonify({"message" : "no stocks to sell"}), 200
+        return jsonify({"message" : "no stocks to sell", "success" : False}), 200
     
     #case 2: have enough stock to sell
     newvalues = {"$set" : {"gold" : goldamt + stockcost}}
@@ -130,8 +130,10 @@ def sell():
     #remove one stock
     result = playerstates.update_one({"portfolio.id": stockid}, {"$set" : {"portfolio.$.owned" : alreadyowned - 1}})
     
-    return jsonify({"message" : "sold"}), 200
- 
+    return jsonify({"message" : "sold", "success" : True}), 200
+
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5001, debug=True)
   

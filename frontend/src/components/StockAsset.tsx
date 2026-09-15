@@ -1,11 +1,13 @@
 import './StockAsset.css'
-import {useEffect} from 'react';
+import {useState} from 'react';
 
 interface DataPayload{
     id: string;
 }
 
 function StockAsset(props){
+
+    const [owned, setOwned] = useState(props.owned);
 
     let stockid: string = props.stockid;
 
@@ -15,15 +17,26 @@ function StockAsset(props){
             id: stockid
         }
 
-        const response = await fetch('http://localhost:5001/api/buy', {
+        //we update the UI here roughly, it could desync from the backend theoretically, but it should be fine
+        fetch('http://localhost:5001/api/buy', {
             method: 'PUT',
             headers: {
                 'Content-type' : 'application/json'
             },
             body: JSON.stringify(payload)
-        });
+        })
+        .then((res) => {
+            return res.json();
+        })
+        .then((data) => {
+            if(data["success"])
+            {
+                setOwned(owned + 1);
+            }
+        })
+        .catch((err) => console.error("error fetching data: ", err));
         
-
+        props.goldupdate();
     };
 
     const SellClick = async () => {
@@ -32,14 +45,25 @@ function StockAsset(props){
             id: stockid
         }
 
-        const response = await fetch('http://localhost:5001/api/sell', {
+        fetch('http://localhost:5001/api/sell', {
             method: 'PUT',
             headers: {
                 'Content-type' : 'application/json'
             },
             body: JSON.stringify(payload)
-        });
+        })
+        .then((res) => {
+            return res.json();
+        })
+        .then((data) => {
+            if(data["success"])
+            {
+                setOwned(owned - 1);
+            }
+        })
+        .catch((err) => console.error("error fetching data: ", err));
 
+        props.goldupdate();
     };
 
     return(
@@ -48,7 +72,7 @@ function StockAsset(props){
             <br/>
             <span className="StockDescription">{props.description}</span>
             <br/>
-            <span className="OwnedShares">shares owned: {props.owned}</span>
+            <span className="OwnedShares">shares owned: {owned}</span>
             <br/>
             <span className="StockPrice">Price: {props.price}</span>
             <br/>

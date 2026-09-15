@@ -1,7 +1,7 @@
 import './GoldDisplay.css'
 import {useEffect, useState} from 'react';
 
-function GoldDisplay(){
+function GoldDisplay({refreshTrigger}:{refreshTrigger: number}){
     const [value, setValue] = useState(null);
 
     useEffect(() =>
@@ -13,9 +13,9 @@ function GoldDisplay(){
                 .then((data) => {
                     setValue(data["amount"]);
                 })
-                .catch((err) => console.error("error fecthing data: ", err));
+                .catch((err) => console.error("error fetching data: ", err));
         }, 
-    []);
+    [refreshTrigger]);
 
     return (
     <div className="GoldDisplayBox">
