@@ -10,7 +10,9 @@ CORS(app, origins=["http://localhost:5173"])
 client = MongoClient("mongodb://db:27017/")
 db = client["dragons_hoard"]
 
-Initialize(db)
+currentevents = []
+
+Initialize(db, currentevents)
 
 companies = db.companies
 events = db.events
@@ -52,6 +54,16 @@ def portfolio():
 
     #return
     return jsonify(finalportfolio), 200
+
+@app.route("/api/events", methods=['GET'])
+def events():
+    finalevents = []
+    for i in range(len(currentevents)):
+        finalevents.append({"name" : currentevents[i]["name"]})
+        finalevents[i]["description"] = currentevents[i]["description"]
+        finalevents[i]["modifiers"] = currentevents[i]["modifiers"]
+    
+    return jsonify(finalevents), 200
 
 @app.route("/api/gold", methods=['GET'])
 def gold():
@@ -132,7 +144,12 @@ def sell():
     
     return jsonify({"message" : "sold", "success" : True}), 200
 
+@app.route("/api/quarter", methods=['GET'])
+def quarter():
+    
 
+
+    return jsonify({"message" : "next quarter"}), 200
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5001, debug=True)

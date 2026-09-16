@@ -1,18 +1,43 @@
 [
     {
-        "name": "Famine",
-        "description": "A famine has hit, greatly hurting most industries, especially the Farmer's Union, and leaving them weak to raiders.",
-        "modifiers": [
-            {"name": "Raiders", "id": "RAID", "value": 0.2},
-            {"name": "Farmer's Union", "id": "FARM", "value": -0.2}
-        ]
-    },
-    {
         "name": "Ore Vein Discovered",
         "description": "Lorem ipsum",
         "modifiers": [
-            {"name": "Miners", "id": "MINE", "value": 0.3},
-            {"name": "Tinkerers", "id": "TINK", "value": 0.1}
+            {"name": "miners", "id": "MINE", "value": 0.3},
+            {"name": "tinkerers", "id": "TINK", "value": 0.1}
+        ]
+    },
+    {
+        "name": "Levies Raised",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "militia", "id": "MILI", "value": 0.15},
+            {"name": "farmers", "id": "FARM", "value": -0.1},
+            {"name": "raiders", "id": "RAID", "value": -0.2}
+        ]
+    },
+    {
+        "name": "Bandit Raids",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "raiders", "id": "RAID", "value": 0.4},
+            {"name": "militia", "id": "MILI", "value": 0.1},
+            {"name": "merchants", "id": "MRCH", "value": -0.25}
+        ]
+    },
+    {
+        "name": "Population Boom",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "farmers", "id": "FARM", "value": 0.15}
+        ]
+    },
+    {
+        "name": "Road Construction",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "merchants", "id": "MRCH", "value": 0.15},
+            {"name": "raiders", "id": "RAID", "value": -0.1}
         ]
     }
 ]

@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import json
 
-def Initialize(db):
+def Initialize(db, currentevents):
 
     with open("stocks.json", "r") as file:
         stocks = json.load(file)
@@ -21,5 +21,8 @@ def Initialize(db):
         "gold": 500,
         "portfolio": [ {"id": "FARM", "owned": 0}, {"id": "CRWN", "owned": 0} ]
     })
+
+    currentevents.append(db.events.find_one())
+    currentevents.append(db.events.find_one({"name" : "Levies Raised"}))
 
     return

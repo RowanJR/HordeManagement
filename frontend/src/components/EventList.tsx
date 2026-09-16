@@ -1,30 +1,33 @@
 import './EventList.css'
 import EventCard from './EventCard';
-
-interface Event{
-    eventname: string;
-    description: string;
-    modifiers: [string, number][];
-}
+import {useEffect, useState} from 'react';
 
 function EventList(props){
+    const [events, setEvents] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const mods: [string, number][] = [
         ["Farmers' Union", -0.2],
         ["raiders", 0.05]
     ];
 
-    let Events: Event[] = [];
+    useEffect(() =>
+        {
+            fetch('http://localhost:5001/api/events')
+                .then((res) => {
+                    return res.json();
+                })
+                .then((data) => {
+                    setEvents(data);
+                    setLoading(false);
+                })
+                .catch((err) => console.error("error fecthing data: ", err));
+        }, 
+    []);
 
-    let famine: Event = {
-        eventname: "Famine",
-        description: "A famine is occuring",
-        modifiers: mods
-    };
+    if(loading) return <div className="List">Obtaining information from server...</div>
 
-    Events.push(famine);
-
-    if(Events.length <= 0)
+    if(events.length <= 0)
     {
         return(
             <div className="List">
@@ -34,9 +37,9 @@ function EventList(props){
 
     return(
         <div className="List">
-            {Events.map(event => <li className="AssetIndex">
+            {events.map(event => <li className="AssetIndex">
                 <EventCard
-                    eventname={event["eventname"]}
+                    eventname={event["name"]}
                     description={event["description"]}
                     modifierarray={event["modifiers"]}
                 />
