@@ -9,20 +9,26 @@ import { useState } from "react";
 type Page = "EventPage" | "AssetPage";
 
 function App() {
-  const [activepage, SetActivePage] = useState<Page>("EventPage");
-  const [refreshtrigger, setRefresh] = useState(0);
+  const [activepage, SetActivePage] = useState<Page>("AssetPage");
+  const [goldrefresh, setGoldRefresh] = useState(0);
+  const [fullrefresh, setRefresh] = useState(0);
 
   const GoldRefresh = () => {
-    setRefresh(refreshtrigger + 1);
+    setGoldRefresh(goldrefresh + 1);
+  };
+
+  const FullRefresh = () => {
+    setRefresh(fullrefresh + 1);
+    setGoldRefresh(goldrefresh + 1);
   };
 
   return (
     <div>
-      {activepage === "EventPage" && <EventList />}
-      {activepage === "AssetPage" && <AssetList onTransaction={GoldRefresh}/>}
-      <GoldDisplay refreshTrigger={refreshtrigger}/>
+      {activepage === "EventPage" && <EventList refresh={fullrefresh}/>}
+      {activepage === "AssetPage" && <AssetList refresh={fullrefresh} onTransaction={GoldRefresh}/>}
+      <GoldDisplay refreshTrigger={goldrefresh}/>
       <PageSelector activepage={activepage} OnSelectPage={SetActivePage} />
-      <NextQuarterButton />
+      <NextQuarterButton onAdvance={FullRefresh}/>
     </div>
   );
 }

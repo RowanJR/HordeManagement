@@ -1,18 +1,19 @@
 import './NextQuarterButton.css'
 
-function NextQuarterButton(){
+function NextQuarterButton(props){
 
     const Click = async () => {
         
-        //we update the UI here roughly, it could desync from the backend theoretically, but it should be fine
         fetch('http://localhost:5001/api/advance')
         .then((res) => {
             return res.json();
         })
         .then((data) => {
-            
+            props.onAdvance();
         })
         .catch((err) => console.error("error fetching data: ", err));
+
+
     };
 
     return (

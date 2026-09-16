@@ -32,11 +32,10 @@ function StockAsset(props){
             if(data["success"])
             {
                 setOwned(owned + 1);
+                props.goldupdate();
             }
         })
         .catch((err) => console.error("error fetching data: ", err));
-        
-        props.goldupdate();
     };
 
     const SellClick = async () => {
@@ -59,6 +58,7 @@ function StockAsset(props){
             if(data["success"])
             {
                 setOwned(owned - 1);
+                props.goldupdate();
             }
         })
         .catch((err) => console.error("error fetching data: ", err));
@@ -74,9 +74,9 @@ function StockAsset(props){
             <br/>
             <span className="OwnedShares">shares owned: {owned}</span>
             <br/>
-            <span className="StockPrice">Price: {props.price}</span>
+            <span className="StockPrice">Price: {props.price.toFixed(3)}</span>
             <br/>
-            <span className="StockDivident">Dividend: {props.dividend}</span>
+            <span className="StockDivident">Dividend: {props.dividend.toFixed(3)}</span>
             <br/>
             <button className="SellButton" onClick={SellClick}>Sell</button>
             <button className="BuyButton" onClick={BuyClick}>Buy</button>

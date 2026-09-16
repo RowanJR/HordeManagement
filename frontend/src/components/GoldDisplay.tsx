@@ -2,7 +2,9 @@ import './GoldDisplay.css'
 import {useEffect, useState} from 'react';
 
 function GoldDisplay({refreshTrigger}:{refreshTrigger: number}){
-    const [value, setValue] = useState(null);
+    const [value, setValue] = useState(0);
+
+    let dummy: number = value;
 
     useEffect(() =>
         {
@@ -19,7 +21,7 @@ function GoldDisplay({refreshTrigger}:{refreshTrigger: number}){
 
     return (
     <div className="GoldDisplayBox">
-        <span className="GoldDisplayText">Gold: {value}</span>
+        <span className="GoldDisplayText">Gold: {dummy.toFixed(1)}</span>
     </div>);
 }
 

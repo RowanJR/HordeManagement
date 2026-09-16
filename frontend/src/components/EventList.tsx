@@ -18,7 +18,7 @@ function EventList(props){
                 })
                 .catch((err) => console.error("error fecthing data: ", err));
         }, 
-    []);
+    [props.refresh]);
 
     if(loading) return <div className="List">Obtaining information from server...</div>
 
