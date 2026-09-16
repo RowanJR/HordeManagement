@@ -22,7 +22,4 @@ def Initialize(db, currentevents):
         "portfolio": [ {"id": "FARM", "owned": 0}, {"id": "CRWN", "owned": 0} ]
     })
 
-    currentevents.append(db.events.find_one())
-    currentevents.append(db.events.find_one({"name" : "Levies Raised"}))
-
     return

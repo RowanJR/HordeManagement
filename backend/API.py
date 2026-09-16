@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 from pymongo import MongoClient
 from init import Initialize
+from turn_management import AdvanceQuarter
 
 app = Flask(__name__)
 
@@ -144,10 +145,10 @@ def sell():
     
     return jsonify({"message" : "sold", "success" : True}), 200
 
-@app.route("/api/quarter", methods=['GET'])
-def quarter():
+@app.route("/api/advance", methods=['GET'])
+def advance():
     
-
+    AdvanceQuarter(db, currentevents)
 
     return jsonify({"message" : "next quarter"}), 200
 

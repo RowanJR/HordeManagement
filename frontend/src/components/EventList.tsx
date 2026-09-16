@@ -6,11 +6,6 @@ function EventList(props){
     const [events, setEvents] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const mods: [string, number][] = [
-        ["Farmers' Union", -0.2],
-        ["raiders", 0.05]
-    ];
-
     useEffect(() =>
         {
             fetch('http://localhost:5001/api/events')

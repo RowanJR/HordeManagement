@@ -9,7 +9,7 @@ import { useState } from "react";
 type Page = "EventPage" | "AssetPage";
 
 function App() {
-  const [activepage, SetActivePage] = useState<Page>("AssetPage");
+  const [activepage, SetActivePage] = useState<Page>("EventPage");
   const [refreshtrigger, setRefresh] = useState(0);
 
   const GoldRefresh = () => {
