@@ -13,14 +13,14 @@
         "modifiers": [
             {"name": "militia", "id": "MILI", "value": 0.15},
             {"name": "farmers", "id": "FARM", "value": -0.1},
-            {"name": "raiders", "id": "RAID", "value": -0.2}
+            {"name": "raiders", "id": "RAID", "value": -0.25}
         ]
     },
     {
         "name": "Bandit Raids",
         "description": "Lorem ipsum",
         "modifiers": [
-            {"name": "raiders", "id": "RAID", "value": 0.4},
+            {"name": "raiders", "id": "RAID", "value": 1.2},
             {"name": "militia", "id": "MILI", "value": 0.1},
             {"name": "merchants", "id": "MRCH", "value": -0.25}
         ]
@@ -38,6 +38,125 @@
         "modifiers": [
             {"name": "merchants", "id": "MRCH", "value": 0.15},
             {"name": "raiders", "id": "RAID", "value": -0.1}
+        ]
+    },
+    {
+        "name": "New Military Technology",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "militia", "id": "MILI", "value": 0.15},
+            {"name": "tinkerers", "id": "TINK", "value": 0.4}
+        ]
+    },
+    {
+        "name": "War Declared",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "militia", "id": "MILI", "value": 0.4},
+            {"name": "miners", "id": "MINE", "value": 0.1},
+            {"name": "raiders", "id": "RAID", "value": -0.25},
+            {"name": "merchants", "id": "MRCH", "value": -0.25}
+        ]
+    },
+    {
+        "name": "Drought",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "raiders", "id": "RAID", "value": 0.3},
+            {"name": "farmers", "id": "FARM", "value": -0.1}
+        ]
+    },
+    {
+        "name": "Crop Failure",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "raiders", "id": "RAID", "value": 0.2},
+            {"name": "farmers", "id": "FARM", "value": -0.1},
+            {"name": "militia", "id": "MILI", "value": -0.05},
+            {"name": "tinkerers", "id": "TINK", "value": -0.05},
+            {"name": "miners", "id": "MINE", "value": -0.05},
+            {"name": "merchants", "id": "MRCH", "value": -0.05}
+        ]
+    },
+    {
+        "name": "Bumper Crop",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "farmers", "id": "FARM", "value": 0.15},
+            {"name": "merchants", "id": "MRCH", "value": 0.1}
+        ]
+    },
+    {
+        "name": "Mine Collapse",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "tinkerers", "id": "TINK", "value": -0.1},
+            {"name": "miners", "id": "MINE", "value": -0.15}
+        ]
+    },
+    {
+        "name": "Peace Treaty",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "merchants", "id": "MRCH", "value": 0.20},
+            {"name": "farmers", "id": "FARM", "value": 0.05},
+            {"name": "militia", "id": "MILI", "value": -0.25},
+            {"name": "miners", "id": "MINE", "value": -0.05}
+        ]
+    },
+    {
+        "name": "Plucky Heroes Arrise",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "militia", "id": "MILI", "value": 0.1},
+            {"name": "tinkerers", "id": "TINK", "value": 0.1},
+            {"name": "merchants", "id": "MRCH", "value": 0.1},
+            {"name": "raiders", "id": "RAID", "value": -0.35}
+        ]
+    },
+    {
+        "name": "Factory Explosion",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "farmers", "id": "FARM", "value": 0.05},
+            {"name": "tinkerers", "id": "TINK", "value": -0.3},
+            {"name": "merchants", "id": "MRCH", "value": -0.1}
+        ]
+    },
+    {
+        "name": "Pouring Rains",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "farmers", "id": "FARM", "value": 0.05},
+            {"name": "merchants", "id": "MRCH", "value": -0.15}
+        ]
+    },
+    {
+        "name": "New Trade Route",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "merchants", "id": "MRCH", "value": 0.25},
+            {"name": "raiders", "id": "RAID", "value": 0.1},
+            {"name": "tinkerers", "id": "TINK", "value": 0.1},
+            {"name": "miners", "id": "MINE", "value": 0.05},
+            {"name": "farmers", "id": "FARM", "value": -0.1}
+        ]
+    },
+    {
+        "name": "Troll Sightings",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "militia", "id": "MILI", "value": 0.1},
+            {"name": "merchants", "id": "MRCH", "value": -0.1},
+            {"name": "miners", "id": "MINE", "value": -0.05}
+        ]
+    },
+    {
+        "name": "Locust Plague",
+        "description": "Lorem ipsum",
+        "modifiers": [
+            {"name": "farmers", "id": "FARM", "value": -0.1},
+            {"name": "merchants", "id": "MRCH", "value": -0.1}
         ]
     }
 ]

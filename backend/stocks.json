@@ -3,58 +3,57 @@
         "id":"CRWN",
         "name":"Crown Bonds",
         "description":"Crown debt, pays steady but small dividends. Resistant against even large events.",
-        "price" : 10,
-        "dividend": 0.01,
-        "deviation": 0.001
+        "price" : 250,
+        "dividend": 0.0125,
+        "deviation": 0.01
     },
     {
         "id":"FARM",
         "name":"Farmers' Union",
         "description":"The Farmers' Union manages the production of staple crops. They have steady and relatively consistent growth.",
-        "price" : 10,
-        "dividend": 0.04,
-        "deviation": 0.05
+        "price" : 100,
+        "dividend": 0.01,
+        "deviation": 0.03
     },
-    
     {
         "id":"MILI",
-        "name":"Militia",
-        "description":"Lorem ipsum.",
-        "price" : 10,
+        "name":"Militia Multinational",
+        "description":"Militia Multinational manages militia and mercenary work. Their profitability can be volatile, but they gain massive benefits during war.",
+        "price" : 30,
         "dividend": 0.00,
-        "deviation": 0.000
+        "deviation": 0.15
     },
     {
         "id":"MINE",
-        "name":"Miners",
-        "description":"Lorem ipsum.",
-        "price" : 10,
-        "dividend": 0.00,
-        "deviation": 0.000
+        "name":"Miners' Association",
+        "description":"The Miner's Association creates a seady supply of matierals used all across the kingdom. They are relatively consistent with chances for growth.",
+        "price" : 50,
+        "dividend": 0.005,
+        "deviation": 0.08
     },
     {
         "id":"TINK",
-        "name":"Tinkerers",
-        "description":"Lorem ipsum.",
+        "name":"Tinkerers' Partnership",
+        "description":"The Tinkerers' Partnership produces all sorts of gadgets bot hstaple and novel. Their value can change drastically, but new inventions can greatly increase their evaluation.",
         "price" : 10,
-        "dividend": 0.00,
-        "deviation": 0.000
+        "dividend": 0.0025,
+        "deviation": 0.12
     },
     {
         "id":"RAID",
-        "name":"Raiders",
-        "description":"Lorem ipsum.",
+        "name":"Raiders Incorporated",
+        "description":"Raiders incorporated profits most when other companies are doing poorly, typically by stealing their goods.",
         "price" : 10,
         "dividend": 0.00,
-        "deviation": 0.000
+        "deviation": 0.25
     },
     {
         "id":"MRCH",
-        "name":"Merchants",
-        "description":"Lorem ipsum.",
-        "price" : 10,
-        "dividend": 0.00,
-        "deviation": 0.000
+        "name":"Merchants' Society",
+        "description":"The Merchants' Society manages trade. They do well in times of peace and are impacted heavily by war.",
+        "price" : 50,
+        "dividend": 0.006,
+        "deviation": 0.1
     }
 ]
 
